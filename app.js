@@ -18,7 +18,8 @@ const start = async () => {
     let totalSize = 0;
 
     video.on('info', (info, format) => {
-        totalSize += format.contentLength;
+        title = info.videoDetails.title;
+        totalSize += parseInt(format.contentLength);
     });
 
     video.on("data", (chunk) => {
@@ -28,8 +29,7 @@ const start = async () => {
     });
 
     audio.on('info', (info, format) => {
-        //console.log(format.contentLength);
-        totalSize += format.contentLength;
+        totalSize += parseInt(format.contentLength);
     });
 
     audio.on("data", (chunk) => {
