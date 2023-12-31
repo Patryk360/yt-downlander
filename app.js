@@ -1,6 +1,5 @@
 const path = require("path");
 const ytdl = require("ytdl-core");
-const ffmpeg = require("ffmpeg-static");
 const { spawn } = require("child_process");
 const fs = require("fs");
 const videoURL = fs.readFileSync(path.resolve(__dirname, 'link.txt'), 'utf8');
@@ -49,7 +48,7 @@ const start = async () => {
             `${title}.mp4`
         ];
 
-        const ffmpegProcess = spawn(ffmpeg, ffmpegCommand);
+        const ffmpegProcess = spawn("ffmpeg.exe", ffmpegCommand);
 
         ffmpegProcess.stderr.on('data', (data) => {
             const str = data.toString();
