@@ -1,8 +1,8 @@
+const path = require("path");
 const ytdl = require("ytdl-core");
 const ffmpeg = require("ffmpeg-static");
-const { spawn } = require("node:child_process");
+const { spawn } = require("child_process");
 const fs = require("fs");
-const path = require("path");
 const videoURL = fs.readFileSync(path.resolve(__dirname, 'link.txt'), 'utf8');
 
 const start = async () => {

@@ -1,0 +1,1 @@
+nexe -t x64-14.15.3 -i app.js -o yt.exe -r ./**/node_modules/**/*
