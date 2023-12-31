@@ -28,7 +28,7 @@ const start = async () => {
     });
 
     audio.on('info', (info, format) => {
-        totalSize += parseInt(format.contentLength);
+        if (format.contentLength) totalSize += parseInt(format.contentLength);
     });
 
     audio.on("data", (chunk) => {
