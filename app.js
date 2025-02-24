@@ -1,5 +1,5 @@
 const path = require("path");
-const ytdl = require("ytdl-core");
+const ytdl = require("@distube/ytdl-core");
 const { spawn } = require("child_process");
 const fs = require("fs");
 const videoURL = fs.readFileSync(path.resolve(__dirname, 'link.txt'), 'utf8');
